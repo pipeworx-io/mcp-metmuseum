@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-metmuseum",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "The Metropolitan Museum of Art Collection MCP.",
   "type": "module",
   "main": "src/index.ts",
@@ -26,7 +26,7 @@
     "@cloudflare/workers-types": "^4.20260405.1"
   },
   "pipeworx": {
-    "sourceHash": "v1-c1410b96615bff9300e14b17ebf49c08030a65c0d6d6666417d9c96b7b01b65c",
-    "sourceCommit": "adb69d997f82a62e8e22b594488c7d04a227db35"
+    "sourceHash": "v1-2c779213db85c0c191da44b685bdfe1e14f8e1d01e729d9c1c5bba44d0bf068d",
+    "sourceCommit": "6182c4cfebddb94950e060b5d2fca18f18ad1aca"
   }
 }
