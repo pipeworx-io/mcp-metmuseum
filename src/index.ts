@@ -689,6 +689,13 @@ async function pwFetch(url: string | URL, init?: RequestInit): Promise<Response>
 }
 
 const BASE = 'https://collectionapi.metmuseum.org/public/collection/v1';
+// /v1/search was retired 2026-10-01 (410 Gone, live-confirmed fleet #2947):
+// it was Solr-backed and returned every matching objectID in one response.
+// The Met's own retirement notice names the replacement directly — Elastic-
+// backed, paginated via offset/limit, same {total, objectIDs} response shape,
+// same query params (q, hasImages, isOnView, medium, dateBegin, dateEnd).
+// /v1/objects and /v1/departments are untouched (live-confirmed 200).
+const SEARCH_BASE = 'https://collectionapi.metmuseum.org/public/collection/v1.1';
 const UA = 'pipeworx/1.0 (+https://pipeworx.io)';
 
 const tools: McpToolExport['tools'] = [
@@ -806,7 +813,7 @@ async function searchArtworks(args: Record<string, unknown>): Promise<unknown> {
     params.set('dateEnd', String(dateEnd ?? dateBegin));
   }
 
-  const res = await pwFetch(`${BASE}/search?${params.toString()}`, {
+  const res = await pwFetch(`${SEARCH_BASE}/search?${params.toString()}`, {
     headers: { Accept: 'application/json', 'User-Agent': UA },
   });
   if (!res.ok) return { error: `met: ${res.status} ${(await res.text()).slice(0, 200)}` };
