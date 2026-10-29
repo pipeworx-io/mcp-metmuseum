@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-metmuseum",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "The Metropolitan Museum of Art Collection MCP.",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-metmuseum": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "metmuseum"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-metmuseum.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/metmuseum",
   "pipeworx": {
-    "sourceHash": "v1-34367030ca4c4df60b7edb1aaab5a8047559f757629bbd53a8d115da95bd1dec",
-    "sourceCommit": "ba9dd6df5992aeb16ef2425ee86d1752c34ca636"
+    "mode": "gateway",
+    "slug": "metmuseum",
+    "gatewaySlug": "metmuseum",
+    "sourceHash": "v1-204e3429bbdc46b77438ccec57052b3318ff594e30a88ef40c5ff025cf82e415",
+    "sourceCommit": "5c89d6abb778d45da5d92002eb251978622bedf9"
   }
 }
