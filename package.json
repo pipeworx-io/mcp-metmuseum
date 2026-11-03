@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-metmuseum",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "The Metropolitan Museum of Art Collection MCP.",
   "type": "module",
   "main": "lib/index.js",
@@ -27,7 +27,7 @@
     "mode": "gateway",
     "slug": "metmuseum",
     "gatewaySlug": "metmuseum",
-    "sourceHash": "v1-204e3429bbdc46b77438ccec57052b3318ff594e30a88ef40c5ff025cf82e415",
-    "sourceCommit": "5c89d6abb778d45da5d92002eb251978622bedf9"
+    "sourceHash": "v1-144176130517a97f332eed95aa25558c541038a47f4e71cc169a536da6d12e50",
+    "sourceCommit": "56cf550e46fed96c0101a3877ccaf8357eecf016"
   }
 }
